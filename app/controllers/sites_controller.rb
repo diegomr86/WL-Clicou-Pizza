@@ -14,8 +14,8 @@ class SitesController < ApplicationController
   def show
 
     puts 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    puts request.domain
-    @site = Site.find_by_domain(request.domain)
+    puts request.host
+    @site = Site.find_by_domain(request.host)
 
     @site.info = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}.json").read)
 
