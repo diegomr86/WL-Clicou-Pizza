@@ -9,7 +9,7 @@
     <file path="$PROJECT_DIR$/../Clicou-Beleza/Gemfile" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370301679620" ignored="false" />
     <file path="/a.dummy" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370302245059" ignored="false" />
     <file path="/site.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370302381566" ignored="false" />
-    <file path="/sites_controller.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370304931761" ignored="false" />
+    <file path="/sites_controller.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370306349607" ignored="false" />
     <file path="/database.yml" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370302782103" ignored="false" />
     <file path="/routes.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370303937670" ignored="false" />
     <file path="/domain_constraint.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370303731816" ignored="false" />
@@ -57,19 +57,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sites_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sites_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/sites_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="99" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+            <state line="16" column="23" selection-start="359" selection-end="359" vertical-scroll-proportion="0.45791245">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/sites/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="32" selection-start="134" selection-end="134" vertical-scroll-proportion="0.2693662">
+            <state line="9" column="32" selection-start="134" selection-end="134" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
@@ -109,8 +109,8 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/lib/domain_constraint.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/sites_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/sites/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/sites_controller.rb" />
       </list>
     </option>
   </component>
@@ -668,16 +668,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sites_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/sites/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="99" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+        <state line="9" column="32" selection-start="134" selection-end="134" vertical-scroll-proportion="-5.8846154">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sites/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/sites_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="32" selection-start="134" selection-end="134" vertical-scroll-proportion="0.2693662">
+        <state line="16" column="23" selection-start="359" selection-end="359" vertical-scroll-proportion="0.45791245">
           <folding />
         </state>
       </provider>
