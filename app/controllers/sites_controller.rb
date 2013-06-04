@@ -1,6 +1,7 @@
+require 'open-uri'
+require 'json'
+
 class SitesController < ApplicationController
-  # GET /sites
-  # GET /sites.json
   def index
     @sites = Site.all
 
@@ -10,10 +11,10 @@ class SitesController < ApplicationController
     end
   end
 
-  # GET /sites/1
-  # GET /sites/1.json
   def show
-    @site = Site.find(params[:id])
+    @site = Site.find_by_domain(request.domain)
+
+    @site.info = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}.json").read)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +22,6 @@ class SitesController < ApplicationController
     end
   end
 
-  # GET /sites/new
-  # GET /sites/new.json
   def new
     @site = Site.new
 
@@ -32,13 +31,10 @@ class SitesController < ApplicationController
     end
   end
 
-  # GET /sites/1/edit
   def edit
     @site = Site.find(params[:id])
   end
 
-  # POST /sites
-  # POST /sites.json
   def create
     @site = Site.new(params[:site])
 
@@ -53,8 +49,6 @@ class SitesController < ApplicationController
     end
   end
 
-  # PUT /sites/1
-  # PUT /sites/1.json
   def update
     @site = Site.find(params[:id])
 
@@ -69,8 +63,6 @@ class SitesController < ApplicationController
     end
   end
 
-  # DELETE /sites/1
-  # DELETE /sites/1.json
   def destroy
     @site = Site.find(params[:id])
     @site.destroy
