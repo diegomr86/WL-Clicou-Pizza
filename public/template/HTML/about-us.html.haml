@@ -1,0 +1,60 @@
+<!doctype html>
+/[if lt IE 7 ] <html class="ie ie6 no-js" lang="en">
+/[if IE 7 ] <html class="ie ie7 no-js" lang="en">
+/[if IE 8 ] <html class="ie ie8 no-js" lang="en">
+/[if IE 9 ] <html class="ie ie9 no-js" lang="en">
+/ [if gt IE 9]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Olipizza
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    %link{:href => "assets/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/lightbox.css", :rel => "stylesheet"}/
+    %script{:src => "assets/js/modernizr-2.6.2.min.js"}
+  %body
+    #topline
+      %div
+    %header
+      .container
+        %a#brand{:href => "index.php"}
+          Oli
+          %span pizza!
+        %form.search.visible-phone{:action => "", :method => "post"}
+          %input{:name => "search", :type => "text", :value => ""}/
+          %input{:type => "submit", :value => ""}/
+        %nav
+          %ul
+            %li
+              %a{:href => "index.html"}
+                %img{:alt => "", :src => "assets/img/icon/home.png"}/
+            %li
+              %a.active{:href => "about_us-us.html"} About us
+            %li
+              %a{:href => "offer-and-menu.html"} Offer & menu
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown"} Gallery
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery one
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery two
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery three
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery four
+            %li
+              %a{:href => "blog.html"} Blog
+            %li
+              %a{:href => "contact.html"} Contact
+          %form.search.hidden-phone{:action => "", :method => "post"}
+            %input{:name => "search", :type => "text", :value => ""}/
+            %input{:type => "submit", :value => ""}/
+
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"}
+    %script{:src => "http://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
+    %script{:src => "assets/js/bootstrap.min.js"}
+    %script{:src => "assets/js/lightbox.js"}
+    %script{:src => "assets/js/script.js"}

@@ -1,0 +1,289 @@
+<!doctype html>
+/[if lt IE 7 ] <html class="ie ie6 no-js" lang="en">
+/[if IE 7 ] <html class="ie ie7 no-js" lang="en">
+/[if IE 8 ] <html class="ie ie8 no-js" lang="en">
+/[if IE 9 ] <html class="ie ie9 no-js" lang="en">
+/ [if gt IE 9]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Olipizza
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    %link{:href => "assets/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/lightbox.css", :rel => "stylesheet"}/
+    %script{:src => "assets/js/modernizr-2.6.2.min.js"}
+  %body
+    #topline
+      %div
+    %header
+      .container
+        %a#brand{:href => "index.php"}
+          Oli
+          %span pizza!
+        %form.search.visible-phone{:action => "", :method => "post"}
+          %input{:name => "search", :type => "text", :value => ""}/
+          %input{:type => "submit", :value => ""}/
+        %nav
+          %ul
+            %li
+              %a.active{:href => "index.html"}
+                %img{:alt => "", :src => "assets/img/icon/home.png"}/
+            %li
+              %a{:href => "about_us-us.html"} About us
+            %li
+              %a{:href => "offer-and-menu.html"} Offer & menu
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown"} Gallery
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery one
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery two
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery three
+                %li
+                  %a{:href => "gallery.html", :tabindex => "-1"} Gallery four
+            %li
+              %a{:href => "blog.html"} Blog
+            %li
+              %a{:href => "contact.html"} Contact
+          %form.search.hidden-phone{:action => "", :method => "post"}
+            %input{:name => "search", :type => "text", :value => ""}/
+            %input{:type => "submit", :value => ""}/
+    #carousel.carousel.slide
+      .container
+        .carousel-inner
+          .active.item
+            %img{:src => "assets/img/carousel1.jpg"}/
+            .hidden-phone
+              Really delicious pizza
+              %span
+          .item
+            %img{:src => "assets/img/carousel2.jpg"}/
+            .hidden-phone
+              Just try it!
+              %span
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"}
+          %img{:alt => "", :src => "assets/img/carousel-arrow-left.png"}/
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"}
+          %img{:alt => "", :src => "assets/img/carousel-arrow-right.png"}/
+    .container
+      .row
+        .span3.box.center-responsive
+          %h2 Lorem ipsum
+          %img{:alt => "", :src => "assets/img/box1.jpg"}/
+          %p Praesent auctor nunc ut tellus tincidunt vel pretium lacus dignissim. In nunc est, semper ornare malesuada sit amet, condimentum sed nisl.
+          %a.button-color{:href => "#"}
+            %span.button-icon
+              %img{:alt => "", :src => "assets/img/icon/mail.png"}/
+            %span.button-text Contact Us
+        .span3.box.center-responsive
+          %h2 Sit amet dolor
+          %img{:alt => "", :src => "assets/img/box2.jpg"}/
+          %p
+            %strong Quisque ullamcorper at sit ornare pellentesque. Integer.
+            = succeed "Praesent" do
+              %br/
+            auctor nunc ut. Praesent auctor nunc ut tellus tincidunt vel.
+          %a.button{:href => "#"}
+            %span.button-icon
+              %img{:alt => "", :src => "assets/img/icon/truck.png"}/
+            %span.button-text Free delivery!
+        .span6
+          .board.hidden-phone
+            .board-inner
+              .item.active
+                %p
+                  %strong Today special offers
+                %ul
+                  %li
+                    %span.left - margerita
+                    %span.right $12
+                  %li
+                    %span.left - quatro cheese
+                    %span.right $10,40
+                  %li
+                    %span.left - other pizza
+                    %span.right $8
+                  %li
+                    %span.left - pizza mexicana
+                    %span.right $19,99
+                  %li
+                    %span.left - vegetarian
+                    %span.right $20
+                  %li
+                    %span.left - with sweet fruits
+                    %span.right $31,50
+                %p{:style => "text-align: center;"} lorem ipsum dolor $2
+              .item
+                %p
+                  %strong This week special offers
+                %ul
+                  %li
+                    %span.left - salami
+                    %span.right $36
+                  %li
+                    %span.left - frutti di mare
+                    %span.right $99,99
+                  %li
+                    %span.left - hot pepperoni
+                    %span.right $12
+                  %li
+                    %span.left - vegetarian
+                    %span.right $20
+                  %li
+                    %span.left - pizza mexicana
+                    %span.right $19,99
+                  %li
+                    %span.left - ice creams
+                    %span.right $4,50
+                %p{:style => "text-align: center;"} lorem ipsum dolor $9
+              .item
+                %p
+                  %strong This month special offers
+                %ul
+                  %li
+                    %span.left - Margheritta
+                    %span.right $9,99
+                  %li
+                    %span.left - Funghi
+                    %span.right $12,50
+                  %li
+                    %span.left - Vesuvio
+                    %span.right $8,99
+                  %li
+                    %span.left - Cacciatore
+                    %span.right $35
+                  %li
+                    %span.left - Toscana
+                    %span.right $20
+                  %li
+                    %span.left - Bolonia
+                    %span.right $2,50
+                %p{:style => "text-align: center;"} sit amet $1,99
+            %ul.board-nav
+              %li.active
+                %span
+              %li
+                %span
+              %li
+                %span
+    .container
+      .row
+        .span12
+          %img{:alt => "", :src => "assets/img/bg-main-gallery-line.png"}/
+    .container
+      .row
+        .span12
+          %ul.home-gallery{:style => "display: block;"}
+            %li.first
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+            %li.last
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery1.jpg"}/
+          %ul.home-gallery
+            %li.first
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+            %li.last
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery2.jpg"}/
+          %ul.home-gallery
+            %li.first
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+            %li.last
+              %a{:href => "#"}
+                %img{:alt => "", :src => "assets/img/home-gallery3.jpg"}/
+    %footer
+      .container
+        .row
+          .span7
+            %h2.center-responsive What's new in our restaurant?
+            .tweet
+              %p
+                %span @Olipizza
+                Sed eget dui enim, sit amet venenatis purus. Phasellus vel libero nunc, in blandit nunc. Sed eget dui enim, sit amet venenatis purus.
+            %p Nulla fermentum enim a turpis auctor at mollis nunc ullamcorper. In sed nisi odio. Ut ut purus diam. Nam venenatis, est eget faucibus posuere, arcu turpis blandit velit, sed pretium ante libero ut erat.
+            %p{:style => "text-align: right; margin-top: 0;"}
+              %a.button.button-small{:href => "#"}
+                %span.button-text Read more
+          .span5
+            %h2.center-responsive People about_us us
+            .comment-author
+              %img{:alt => "", :src => "assets/img/women1.png"}/
+              %p.date 19 July 2012
+              %p.author Joanne Samir
+            .comment-content
+              %p
+                %strong Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna diam, pretium ullamcorper ornare at.
+              %p Nam eget nulla vel risus venenatis eleifend. Aliquam sed neque sapien. Quisque viverra congue velit id porta.
+        .row
+          .span12.copyrights
+            .brand Olipizza!
+            %p.hidden-phone &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
+            %a.fb{:href => "#"}
+              %img{:alt => "", :src => "assets/img/fb.png"}/
+          %p.visible-phone{:style => "text-align: center;"} &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"}
+    %script{:src => "http://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
+    %script{:src => "assets/js/bootstrap.min.js"}
+    %script{:src => "assets/js/lightbox.js"}
+    %script{:src => "assets/js/script.js"}

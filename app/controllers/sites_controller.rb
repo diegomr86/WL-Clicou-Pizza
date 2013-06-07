@@ -6,21 +6,15 @@ class SitesController < ApplicationController
     @sites = Site.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @sites }
     end
   end
 
   def show
 
-    puts 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    puts request.host
-    @site = Site.find_by_domain(request.host)
-
-    @site.info = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}.json").read)
-
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @site }
     end
   end

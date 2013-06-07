@@ -1,0 +1,70 @@
+!!!
+%html{ lang: :en }>
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= @site.info['name']
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    #topline
+      %div
+    %header
+      .container
+        = link_to root_path, id: 'brand' do
+          = image_tag @site.info['logo_urls']['img_150']
+        %nav
+          %ul
+            %li
+              %a.active{:href => "/"}
+                %img{:alt => "", :src => "/assets/icon/home.png"}/
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown"} Cardápio
+              %ul.dropdown-menu
+                %li
+                  =link_to 'Pizzas', menu_index_path(type: :pizza), tabindex: "-1"
+                %li
+                  =link_to 'Outros pratos', menu_index_path(type: :product), tabindex: "-1"
+                %li
+                  =link_to 'Bebidas', menu_index_path(type: :drink), tabindex: "-1"
+            %li
+              = link_to 'Sobre nós', about_us_path
+            %li
+              = link_to 'Regiões atendidas', regions_path
+            %li
+              = link_to 'Fale conosco', contact_index_path
+    = yield
+
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"}
+    %script{:src => "http://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
+    %script{:src => "assets/bootstrap.min.js"}
+    %script{:src => "assets/lightbox.js"}
+    %script{:src => "assets/script.js"}
+    %footer
+      .container
+        .row
+          .span12
+            %h2.center-responsive Depoimentos dos nossos clientes
+            - @ratings['data'][0..2].each do |rating|
+              .comment-author
+                = image_tag rating['user']['avatar']
+                %p.date
+                %p.author= rating['user']['name']
+              .comment-content
+                %p= rating['comment']
+              .clearfix
+              %br
+        .row
+          .span12.copyrights
+            .brand
+              = link_to 'http://www.clicoupizza.com/', target: '_blank' do
+                = image_tag 'clicou_pizza.png'
+            %p.hidden-phone.pull-right
+              &copy; Copyrights 2012,
+              = link_to @site.info['name'], root_path
+              em parceria com
+              = link_to 'Clicou Pizza.', 'http://www.clicoupizza.com/', target: '_blank'
+          %p.visible-phone{:style => "text-align: center;"} &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
