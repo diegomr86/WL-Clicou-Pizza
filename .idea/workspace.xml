@@ -7,7 +7,7 @@
     <file path="/20130603231625_create_sites.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370301474930" ignored="false" />
     <file path="/Dummy.txt" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370545894846" ignored="false" />
     <file path="$PROJECT_DIR$/../Clicou-Beleza/Gemfile" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370301679620" ignored="false" />
-    <file path="/a.dummy" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370560772549" ignored="false" />
+    <file path="/a.dummy" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370564275495" ignored="false" />
     <file path="/site.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370302381566" ignored="false" />
     <file path="/sites_controller.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370306349607" ignored="false" />
     <file path="/database.yml" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370302782103" ignored="false" />
@@ -16,7 +16,6 @@
     <file path="/show.html.erb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370304977419" ignored="false" />
     <file path="/html2haml.sh" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370470539034" ignored="false" />
     <file path="/application.html.haml" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370562855826" ignored="false" />
-    <file path="$PROJECT_DIR$/config/environments/production.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370555604803" ignored="false" />
     <file path="$PROJECT_DIR$/app/assets/stylesheets/daniel-webfont/specimen_files/specimen_stylesheet.css" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370486978896" ignored="false" />
     <file path="/bootstrap.min.js" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370487212943" ignored="false" />
     <file path="/application_controller.rb" changelist="b747059f-637d-426e-968c-0fac4d36c8cf" time="1370562795978" ignored="false" />
@@ -82,15 +81,6 @@
         </entry>
       </file>
       <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/contact/index.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="139" selection-end="437" vertical-scroll-proportion="-9.807693">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/regions/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="13" column="18" selection-start="527" selection-end="527" vertical-scroll-proportion="-8.5">
@@ -108,10 +98,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/sites/show.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="2807" selection-end="2807" vertical-scroll-proportion="0.94014084">
+            <state line="80" column="0" selection-start="2807" selection-end="2807" vertical-scroll-proportion="-20.538462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.sass" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="27" selection-start="39" selection-end="39" vertical-scroll-proportion="0.029668411">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="2" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="141" selection-start="2199" selection-end="2199" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/about/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/about/index.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/about_us_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
@@ -147,11 +163,12 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/menu_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.sass" />
         <option value="$PROJECT_DIR$/app/views/regions/index.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
         <option value="$PROJECT_DIR$/app/views/sites/show.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.sass" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -862,14 +879,14 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25506938" sideWeight="0.67099565" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,22 +953,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="6" selection-start="2422" selection-end="4099" vertical-scroll-proportion="0.96158195">
-          <folding>
-            <marker date="1370558103978" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/about_us_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="43" selection-start="44" selection-end="44" vertical-scroll-proportion="0.018930959">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/contact_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.018930959">
@@ -1001,13 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="168" selection-end="168" vertical-scroll-proportion="0.37205386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/regions/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="18" selection-start="527" selection-end="527" vertical-scroll-proportion="-8.5">
@@ -1045,7 +1039,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sites/show.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2807" selection-end="2807" vertical-scroll-proportion="0.94014084">
+        <state line="80" column="0" selection-start="2807" selection-end="2807" vertical-scroll-proportion="-20.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="2" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="141" selection-start="2199" selection-end="2199" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="39" selection-end="39" vertical-scroll-proportion="0.029668411">
           <folding />
         </state>
       </provider>
