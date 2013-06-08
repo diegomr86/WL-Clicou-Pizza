@@ -12,4 +12,16 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require bootstrap.min
 #= require modernizr-2.6.2.min
+#= require fancybox
+
+$("a.fancybox").fancybox
+  showCloseButton: false
+  overlayOpacity: 0.9
+  overlayColor: "#ffffff"
+  transitionIn: "elastic"
+$ ->
+  $('[title]:not(.not-tip)').tooltip()
+
+  $('[href="'+location.pathname+'"], [data-href="'+location.pathname+'"]').addClass 'active'

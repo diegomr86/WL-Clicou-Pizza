@@ -321,6 +321,7 @@ header .dropdown-menu a:hover {
 }
 #carousel .item div span {
   position: absolute;
+  top: 0;
   width: 27px;
   height: 61px;
   right: -24px;
@@ -409,6 +410,7 @@ header .dropdown-menu a:hover {
   text-align: center;
   float: left;
   margin-right: 5px;
+  height: 40px;
 }
 .button .button-icon img {
   padding: 12px;
@@ -498,6 +500,7 @@ header .dropdown-menu a:hover {
   text-align: center;
   float: left;
   margin-right: 5px;
+  height: 40px;
 }
 .button-color .button-icon img {
   padding: 12px;
@@ -1329,7 +1332,7 @@ footer .comment-content p {
 .menu tbody .col3 {
   color: #734e2f;
   font-family: LeagueGothic;
-  font-size: 45px;
+  font-size: 22px;
   line-height: 25px;
   padding-top: 20px;
   padding-bottom: 20px;

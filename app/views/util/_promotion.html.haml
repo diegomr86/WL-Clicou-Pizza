@@ -1,0 +1,11 @@
+- @site.info['promotions'].each do |promotion|
+  - if promotion['active']
+    %table.message
+      %tr
+        %td.message-icon
+          %span
+            %img{:alt => "", :src => "assets/icon/ticket.png"}/
+        %td
+          %p
+            %strong Promoção:
+            = promotion['description']

@@ -1,5 +1,5 @@
 !!!
-%html{ lang: :en }>
+%html{ lang: 'pt-BR' }>
   %head
     %meta{:charset => "utf-8"}/
     %title= @site.info['name']
@@ -19,52 +19,85 @@
         %nav
           %ul
             %li
-              %a.active{:href => "/"}
+              %a{:href => "/"}
                 %img{:alt => "", :src => "/assets/icon/home.png"}/
             %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown"} Cardápio
+              %a.dropdown-toggle{"data-toggle" => "dropdown", "data-href" => menu_index_path, } Cardápio
               %ul.dropdown-menu
-                %li
-                  =link_to 'Pizzas', menu_index_path(type: :pizza), tabindex: "-1"
-                %li
-                  =link_to 'Outros pratos', menu_index_path(type: :product), tabindex: "-1"
-                %li
-                  =link_to 'Bebidas', menu_index_path(type: :drink), tabindex: "-1"
+                - @site.info['pizza_categories'].each do |pizza_category|
+                  %li
+                    =link_to pizza_category['description'], menu_index_path(type: :pizza, category: pizza_category['id']), tabindex: "-1"
+                - @site.info['product_categories'].each do |product_category|
+                  %li
+                    =link_to product_category['description'], menu_index_path(type: :product, category: product_category['id']), tabindex: "-1"
+                - @site.info['drink_categories'].each do |drink_category|
+                  %li
+                    =link_to drink_category['description'], menu_index_path(type: :drink, category: drink_category['id']), tabindex: "-1"
             %li
               = link_to 'Sobre nós', about_us_path
             %li
               = link_to 'Regiões atendidas', regions_path
             %li
-              = link_to 'Fale conosco', contact_index_path
+              = link_to 'Fale conosco', contact_us_path
+    .container
+      = render 'util/errors'
+
     = yield
 
-    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"}
-    %script{:src => "http://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
     %script{:src => "assets/bootstrap.min.js"}
     %script{:src => "assets/lightbox.js"}
     %script{:src => "assets/script.js"}
     %footer
       .container
         .row
-          .span12
+          .span6
+            .row
+              %br
+              %h2.center-responsive Venha nos fazer uma visita
+              %br
+              %strong= [@site.info['address']['street'], @site.info['address']['number'], @site.info['address']['complement'], @site.info['address']['district']].delete_if(&:blank?).join(', ')
+              %br/
+              #{@site.info['address']['city']} - #{@site.info['address']['state']}
+              %br/
+              %br/
+              = image_tag "http://maps.googleapis.com/maps/api/staticmap?markers=color:blue%7Clabel:S%7C#{@site.info['address']['latitude']},#{@site.info['address']['longitude']}&size=479x250&sensor=true"
+            .row
+              %br
+              %h2.center-responsive Para seu conforto, possuímos
+              %br
+              .row
+                .row
+                  - [:deficient, :smokers, :reserves, :air_conditioning, :wireless, :outside_area, :parking, :delivery].delete_if{|info| !@site.info[info.to_s]}.in_groups(2).each do |info|
+                    .span3
+                      %ul.list-tick
+                        - info.each do |i|
+                          - if i
+                            %li= t("words.#{i}")
+
+          .span6
+            %br
             %h2.center-responsive Depoimentos dos nossos clientes
+            %br
             - @ratings['data'][0..2].each do |rating|
               .comment-author
                 = image_tag rating['user']['avatar']
                 %p.date
-                %p.author= rating['user']['name']
               .comment-content
+                %p
+                  %strong= rating['user']['name']
                 %p= rating['comment']
               .clearfix
               %br
+        .clearfix
         .row
           .span12.copyrights
             .brand
               = link_to 'http://www.clicoupizza.com/', target: '_blank' do
                 = image_tag 'clicou_pizza.png'
             %p.hidden-phone.pull-right
-              &copy; Copyrights 2012,
+              &copy; Copyrights 2012. Todos os direitos reservados.
               = link_to @site.info['name'], root_path
               em parceria com
               = link_to 'Clicou Pizza.', 'http://www.clicoupizza.com/', target: '_blank'
-          %p.visible-phone{:style => "text-align: center;"} &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
+          %p.visible-phone{:style => "text-align: center;"}
+          %br

@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
 
     @site = Site.find_by_domain(request.host)
 
-    @site.info = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}.json?wl=true").read) if @site.present?
-    @pizzas = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}/order_pizza.json?wl=true").read) if @site.present?
-    @ratings = ActiveSupport::JSON.decode(open("http://clicoupizza.com/#{@site.code}/rating.json?wl=true").read) if @site.present?
-
+    if @site.present?
+      @site.info = ActiveSupport::JSON.decode(open("http://www.clicoupizza.com/#{@site.code}.json?wl=true").read)
+      @pizzas = ActiveSupport::JSON.decode(open("http://www.clicoupizza.com/#{@site.code}/order_pizza.json?wl=true").read)
+      @ratings = ActiveSupport::JSON.decode(open("http://www.clicoupizza.com/#{@site.code}/rating.json?wl=true").read)
+    end
   end
 end

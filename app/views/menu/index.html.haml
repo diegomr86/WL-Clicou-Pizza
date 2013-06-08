@@ -2,112 +2,61 @@
   .row
     .span9
       .header-big.center-responsive
-        %h1 Sobre nós
-      %img{:alt => "", :src => "assets/pizza.jpg"}/
-      %table.message
-        %tr
-          %td.message-icon
-            %span
-              %img{:alt => "", :src => "assets/icon/ticket.png"}/
-          %td
-            %p
-              %strong Olipizza information:
-              This is a message for information, can be any general information.
-          %td.message-close
-            %img{:alt => "", :src => "assets/message-close.png"}/
-      %p= @site.info['about']
+        %h1 Cardápio
+      = render 'util/promotion'
       .row
-        .span4
-          %ul.list-tick
-            %li Mauris porta interdum luctus
-            %li Praesent dignissim luctus ultricies
-            %li Quisque volutpat bibendum
-            %li Maecenas massa dui, tempor ut fringilla
-            %li Vestibulum id lorem sed justo rutrum
-            %li Morbi turpis diam, ultrices vestibulu
-        .span4.offset1
-          %ul.list-tick
-            %li Mauris porta interdum luctus
-            %li Praesent dignissim luctus ultricies
-            %li Quisque volutpat bibendum
-            %li Maecenas massa dui, tempor ut fringilla
-            %li Vestibulum id lorem sed justo rutrum
-            %li Morbi turpis diam, ultrices vestibulu
-      .row
-        .span3.box.center-responsive
-          %h2 Sit amet dolor
-          %img{:alt => "", :src => "assets/box3.jpg"}/
-          %p
-            %strong Quisque sit ornare sit amet ullamcorper ornare pellentesque. Integer ornare.
-          %p Praesent auctor nunc ut. Praesent auctor nunc ut tellus tincidunt vel.
-          %p{:style => "text-align: right;"}
-            %a.button.button-small{:href => "#"}
-              %span.button-text Read more
-        .span3.box.center-responsive
-          %h2 Lorem ipsum
-          %img{:alt => "", :src => "assets/box4.jpg"}/
-          %p
-            %strong Quisque sit ornare sit amet ullamcorper ornare pellentesque sit amet. Integer ornare.
-          %p Praesent auctor nunc ut.
-          %p{:style => "text-align: right;"}
-            %a.button-color.button-small{:href => "#"}
-              %span.button-text Read more
-        .span3.box.center-responsive
-          %h2 Sit amet dolor
-          %img{:alt => "", :src => "assets/box5.jpg"}/
-          %p
-            %strong Quisque sit ornare sit amet ullamcorper ornare pellentesque sit amet. Integer ornare.
-          %p Praesent auctor nunc ut. Praesent auctor nunc ut tellus tincidunt vel.
-          %p{:style => "text-align: right;"}
-            %a.button.button-small{:href => "#"}
-              %span.button-text Read more
-    .span3
-      %ul.list-line.center-responsive
-        %li
-          %a{:href => "#"} Restaurant history
-        %li
-          %a{:href => "#"} Where are we?
-        %li
-          %a{:href => "#"} Our menus and delivery
-        %li
-          %a{:href => "#"} Contact details
-      .box.center-responsive
-        %h2 Sit amet dolor
-        %img{:alt => "", :src => "assets/box2.jpg"}/
-        %p
-          %strong Quisque ornare ullamcorper ornare pellentesque sit amet. Integer ornare.
-        %p Praesent auctor nunc ut. Praesent auctor nunc ut tellus tincidunt vel.
-        %a.button-color{:href => "#"}
-          %span.button-icon
-            %img{:alt => "", :src => "assets/icon/truck.png"}/
-          %span.button-text Free delivery!
-  %footer
-  .container
-    .row
-      .span7
-        %h2.center-responsive What's new in our restaurant?
-        .tweet
-          %p
-            %span @Olipizza
-            Sed eget dui enim, sit amet venenatis purus. Phasellus vel libero nunc, in blandit nunc. Sed eget dui enim, sit amet venenatis purus.
-        %p Nulla fermentum enim a turpis auctor at mollis nunc ullamcorper. In sed nisi odio. Ut ut purus diam. Nam venenatis, est eget faucibus posuere, arcu turpis blandit velit, sed pretium ante libero ut erat.
-        %p{:style => "text-align: right; margin-top: 0;"}
-          %a.button.button-small{:href => "#"}
-            %span.button-text Read more
-      .span5
-        %h2.center-responsive People about_us us
-        .comment-author
-          %img{:alt => "", :src => "assets/women1.png"}/
-          %p.date 19 July 2012
-          %p.author Joanne Samir
-        .comment-content
-          %p
-            %strong Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna diam, pretium ullamcorper ornare at.
-          %p Nam eget nulla vel risus venenatis eleifend. Aliquam sed neque sapien. Quisque viverra congue velit id porta.
-    .row
-      .span12.copyrights
-        .brand Olipizza!
-        %p.hidden-phone &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
-        %a.fb{:href => "#"}
-          %img{:alt => "", :src => "assets/fb.png"}/
-      %p.visible-phone{:style => "text-align: center;"} &copy; Copyrights 2012 USA, New York st. Delicious 87/19.
+        .span3.center-responsive
+          - @site.info["#{params['type']}_categories"].each do |category|
+            - if params["category"] == category['id'].to_s
+              %h2= category['description']
+        - if params['type'] == 'pizza'
+          .span6.center-responsive{:style => "text-align: right;"}
+            .form-select
+              .selected= @pizzas['data']['pizza_sizes'].first['description']
+              .arrow
+                %img{:alt => "", :src => "/assets/form-select-arrow.png"}/
+              %ul.options.nav.nav-tabs
+                - @pizzas['data']['pizza_sizes'].each do |pizza_size|
+                  %li
+                    %a{"data-toggle" => "tab", href: "#pizza_size_tab_#{pizza_size['id']}"}= pizza_size['description']
+
+      - if params['type'] == 'pizza'
+        .tab-content
+          - @pizzas['data']["pizza_sizes"].each_with_index do |pizza_size, index|
+            .tab-pane{id: "pizza_size_tab_#{pizza_size['id']}", class: (index == 0 ? 'active' : '')}
+              %table.menu
+                %colgroup{:style => "width: 30%;"}
+                %colgroup{:style => "width: 60%;"}
+                %colgroup{:style => "width: 10%;"}
+                %thead
+                  %tr
+                    %th.col1 Nome
+                    %th.col2 Ingredientes
+                    %th.col3 Preço
+                %tbody
+                  - pizza_size['pizza_flavors'].each do |pizza_flavor|
+                    - if pizza_flavor['pizza_category_id'] == params['category'].to_i
+                      %tr.row-odd
+                        %td.col1= pizza_flavor['description']
+                        %td.col2= pizza_flavor['ingredients']
+                        %td.col3= number_to_currency(pizza_flavor['value'])
+      - else
+        %table.menu
+          %colgroup{:style => "width: 30%;"}
+          %colgroup{:style => "width: 60%;"}
+          %colgroup{:style => "width: 10%;"}
+          %thead
+            %tr
+              %th.col1 Nome
+              %th.col2 Ingredientes
+              %th.col3 Preço
+          %tbody
+            - @items['data'].each do |item|
+              %tr.row-odd
+                %td.col1= item['description']
+                - if params['type'] == 'product'
+                  %td.col2= item['info']
+                %td.col3= number_to_currency(item['value'])
+
+
+    = render 'util/right_bar'

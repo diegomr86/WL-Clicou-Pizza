@@ -1,0 +1,33 @@
+.container
+  .row
+    .span9
+      .header-big.center-responsive
+        %h1 Fale conosco
+      .row
+        .span3.contact-details.center-responsive
+          %h3= @site.info['name']
+          %p
+            %strong
+              = [@site.info['address']['street'], @site.info['address']['number'], @site.info['address']['complement'], @site.info['address']['district']].delete_if(&:blank?).join(', ')
+            %br/
+            #{@site.info['address']['city']} - #{@site.info['address']['state']}
+            %br/
+            %br/
+            %br/
+            - @site.info['phone'].split(', ').each do |phone|
+              %br/
+              = phone
+            %br/
+            %br/
+            %br/
+            %a{:href => "mailto:#{@site.info['email']}"}= @site.info['email']
+        .span6
+          = simple_form_for(@contact_us, url: contact_us_path, html: { class: 'center-responsive', id: 'contact-form' } ) do |f|
+            = f.error_notification
+            = f.input :name
+            = f.input :email
+            = f.input :phone
+            = f.input :message, as: :text
+            .form-actions
+              = f.submit 'Enviar', class: 'btn btn-warning pull-right'
+    = render 'util/right_bar'

@@ -192,43 +192,43 @@ function board()
   }, 5000 );
 }
 
-// contact send
+// contact_us send
 function contact_send()
 {
   contact_data = new Object();
-  contact_data.name = $( '#contact-form input[name="name"]' ).val();
-  contact_data.email = $( '#contact-form input[name="email"]' ).val();
-  contact_data.message = $( '#contact-form textarea[name="message"]' ).val();
+  contact_data.name = $( '#contact_us-form input[name="name"]' ).val();
+  contact_data.email = $( '#contact_us-form input[name="email"]' ).val();
+  contact_data.message = $( '#contact_us-form textarea[name="message"]' ).val();
   
   // validation
   if( contact_data.name == '' )
   {
-    $( '#contact-form input[name="name"]' ).addClass( 'error' );
+    $( '#contact_us-form input[name="name"]' ).addClass( 'error' );
     return false;
   }
   else
   {
-    $( '#contact-form input[name="name"]' ).removeClass( 'error' );
+    $( '#contact_us-form input[name="name"]' ).removeClass( 'error' );
   }
   
   if( contact_data.email == '' || !/^[a-zA-Z0-9_\.\-]+\@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9]{2,4}$/.test( contact_data.email ) )
   {
-    $( '#contact-form input[name="email"]' ).addClass( 'error' );
+    $( '#contact_us-form input[name="email"]' ).addClass( 'error' );
     return false;
   }
   else
   {
-    $( '#contact-form input[name="email"]' ).removeClass( 'error' );
+    $( '#contact_us-form input[name="email"]' ).removeClass( 'error' );
   }
   
   if( contact_data.message == '' )
   {
-    $( '#contact-form textarea[name="message"]' ).addClass( 'error' );
+    $( '#contact_us-form textarea[name="message"]' ).addClass( 'error' );
     return false;
   }
   else
   {
-    $( '#contact-form textarea[name="message"]' ).removeClass( 'error' );
+    $( '#contact_us-form textarea[name="message"]' ).removeClass( 'error' );
   }
   
   // e-mail send via AJAX
@@ -239,9 +239,9 @@ function contact_send()
     data: 'name=' + contact_data.name + '&email=' + contact_data.email + '&message=' + contact_data.message,
     success: function()
     {
-      $( '#contact-form input[name="name"]' ).val( '' );
-      $( '#contact-form input[name="email"]' ).val( '' );
-      $( '#contact-form textarea[name="message"]' ).val( '' );
+      $( '#contact_us-form input[name="name"]' ).val( '' );
+      $( '#contact_us-form input[name="email"]' ).val( '' );
+      $( '#contact_us-form textarea[name="message"]' ).val( '' );
       $( '.header-big' ).after( '<table class="message" style="display: none;"><tbody><tr><td class="message-icon"><span><img alt="" src="assets/icon/ticket.png"></span></td><td><p><strong>Message sent:</strong> We will answer you soon as is possible.</p></td><td class="message-close"><img alt="" src="assets/message-close.png"></td></tr></tbody></table>' );
       $( '.message' ).fadeIn();
     }

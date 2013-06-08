@@ -1,0 +1,9 @@
+pt-BR:
+  activemodel:
+    attributes:  
+      contact_us:
+        name: Nome da empresa
+        email: Email
+        phone: Telefone
+        message: Responsável
+    

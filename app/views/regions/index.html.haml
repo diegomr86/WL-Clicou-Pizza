@@ -2,7 +2,7 @@
   .row
     .span9
       .header-big.center-responsive
-        %h1 Sobre nós
+        %h1 Regiões atendidas
       = image_tag "http://maps.googleapis.com/maps/api/staticmap?markers=color:blue%7Clabel:S%7C#{@site.info['address']['latitude']},#{@site.info['address']['longitude']}&size=700x367&sensor=true"
       %p= @site.info['about']
       .row
@@ -12,23 +12,4 @@
               - d.each do |delivery_info|
                 - if delivery_info
                   %li= delivery_info['description']
-    .span3
-      %ul.list-line.center-responsive
-        %li
-          %a{:href => "#"} Restaurant history
-        %li
-          %a{:href => "#"} Where are we?
-        %li
-          %a{:href => "#"} Our menus and delivery
-        %li
-          %a{:href => "#"} Contact details
-      .box.center-responsive
-        %h2 Sit amet dolor
-        %img{:alt => "", :src => "assets/box2.jpg"}/
-        %p
-          %strong Quisque ornare ullamcorper ornare pellentesque sit amet. Integer ornare.
-        %p Praesent auctor nunc ut. Praesent auctor nunc ut tellus tincidunt vel.
-        %a.button-color{:href => "#"}
-          %span.button-icon
-            %img{:alt => "", :src => "assets/icon/truck.png"}/
-          %span.button-text Free delivery!
+    = render 'util/right_bar'

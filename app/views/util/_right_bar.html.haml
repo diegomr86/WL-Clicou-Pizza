@@ -1,0 +1,25 @@
+.span3
+  .box.center-responsive
+    %h2 Pedido online
+    %img{:alt => "", :src => "/assets/box2.jpg"}/
+    %p
+      %strong Com nosso sistema de pedido online você agora, pode pedir sua pizza online no conforto de casa.
+    = link_to "http://www.clicoupizza.com/#{@site.code}", class: 'button-color fancybox', 'data-fancybox-type' => 'iframe' do
+      %span.button-icon
+        %img{:alt => "", :src => "/assets/icon/truck.png"}/
+      %span.button-text Peça Já
+
+  %br
+  %br
+  %br
+  %ul.list-line.center-responsive
+    - @site.info['pizza_categories'].each do |pizza_category|
+      %li
+        =link_to pizza_category['description'], menu_index_path(type: :pizza, category: pizza_category['id']), tabindex: "-1"
+    - @site.info['product_categories'].each do |product_category|
+      %li
+        =link_to product_category['description'], menu_index_path(type: :product, category: product_category['id']), tabindex: "-1"
+    - @site.info['drink_categories'].each do |drink_category|
+      %li
+        =link_to drink_category['description'], menu_index_path(type: :drink, category: drink_category['id']), tabindex: "-1"
+
