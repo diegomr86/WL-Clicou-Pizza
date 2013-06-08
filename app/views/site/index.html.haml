@@ -1,0 +1,73 @@
+#carousel.carousel.slide
+  .container
+    .carousel-inner
+      .active.item
+        %img{:src => "/assets/carousel1.jpg"}/
+        .hidden-phone
+          A melhor pizza da cidade
+          %span
+      .item
+        %img{:src => "/assets/carousel2.jpg"}/
+        .hidden-phone
+          Peça sua pizza agora!
+          %span
+    %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"}
+      %img{:alt => "", :src => "/assets/carousel-arrow-left.png"}/
+    %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"}
+      %img{:alt => "", :src => "/assets/carousel-arrow-right.png"}/
+    - @site.info['promotions'].each do |promotion|
+      - if promotion['active']
+        %table.message
+          %tr
+            %td.message-icon
+              %span
+                %img{:alt => "", :src => "assets/icon/ticket.png"}/
+            %td
+              %p
+                %strong Promoção:
+                = promotion['description']
+
+.container
+  .row
+    .span3.box.center-responsive
+      %h2 Faça-nos uma visita
+      %img{:alt => "", :src => "/assets/box1.jpg"}/
+      %p Venha conhecer nosso espaço e aproveite para comer a melhor pizza da cidade.
+      %a.button-color{:href => "#"}
+        %span.button-icon
+          %img{:alt => "", :src => "/assets/icon/mail.png"}/
+        %span.button-text Contato
+    .span3.box.center-responsive
+      %h2 Pedido online
+      %img{:alt => "", :src => "/assets/box2.jpg"}/
+      %p
+        %strong Com nosso sistema de pedido online você agora, pode pedir sua pizza online no conforto de casa.
+      = link_to "http://www.clicoupizza.com/#{@site.code}/order", class: 'button fancybox', 'data-fancybox-type' => 'iframe' do
+        %span.button-icon
+          %img{:alt => "", :src => "/assets/icon/truck.png"}/
+        %span.button-text Peça Já
+    .span6
+      .board.hidden-phone
+        .board-inner
+          - @pizzas['data']['pizza_sizes'].each_with_index do |pizza_size, index|
+            .item{class: (index == 0 ? 'active' : '')}
+              %p
+                %strong= pizza_size['description']
+              .row
+                %ul.wall
+                  - pizza_size['pizza_flavors'][0..8].each do |pizza_flavor|
+                    %li
+                      %span.left - #{pizza_flavor['description']}
+                      %span.right= number_to_currency(pizza_flavor['value'])
+        %ul.board-nav
+          %li.active
+            %span
+          %li
+            %span
+          %li
+            %span
+.container
+  .row
+    .span12
+      %img{:alt => "", :src => "/assets/bg-main-gallery-line.png"}/
+
